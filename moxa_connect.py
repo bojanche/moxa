@@ -1,6 +1,7 @@
 import requests
 from requests import HTTPError
 import json
+import time
 
 MOXA_IP = "192.168.0.253"
 status_URL = "http://" + MOXA_IP + "/api/slot/0/io/do"
@@ -205,6 +206,13 @@ def put_data(url=status_URL, headers=getHeaders, data=0):
             print("Success!")
 
 
+
+def moxa_pulse(tajm):
+    put_data(data=0)
+    put_data(data=1)
+    time.sleep(tajm)
+    put_data(data=0)
+
+
 if __name__ == '__main__':
-    put_data(data=0
-             )
+    moxa_pulse(1)
