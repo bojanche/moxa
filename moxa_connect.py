@@ -206,4 +206,5 @@ def put_data(url=status_URL, headers=getHeaders, data=0):
 
 
 if __name__ == '__main__':
-    put_data(data=0)
+    put_data(data=0
+             )
